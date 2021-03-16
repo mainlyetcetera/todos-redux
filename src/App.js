@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { AddTodoAction } from './actions/TodoActions' 
 import './App.css'
 
@@ -7,6 +7,8 @@ const App = () => {
   const [todo, setTodo] = useState()
 
   const dispatch = useDispatch()
+  const Todo = useSelector(state => state.Todo)
+  const { todos } = Todo
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -32,16 +34,21 @@ const App = () => {
           </button>
         </form>
         <ul className='allTodos'>
-          <li
-            className='singleTodo'
-          >
-            <span className='todoText'>Some text here</span>
-            <button
-              className='delete'
-            >
-              Delete
-            </button>
-          </li>
+          {
+            todos && todos.map(todo => (
+              <li
+                className='singleTodo'
+                key={todo.id}
+              >
+                <span className='todoText'>{todo.todo}</span>
+                <button
+                  className='delete'
+                >
+                  Delete
+                </button>
+              </li>
+            ))
+          }
         </ul>
       </header>
     </div>
