@@ -13,12 +13,10 @@ export const AddTodoAction = todo => (dispatch, getState) => {
   }
 }
 
-export const RemoveTodoAction = todo => (dispatch, getState) {
+export const RemoveTodoAction = todo => (dispatch, getState) => {
   const {
     Todo: { todos }
   } = getState()
-
-  const hasTodo = todos.find(i => i.todo === todo)
 
   dispatch({
     type: "REMOVE_TODO",
