@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 
 const App = () => {
   return (
@@ -7,7 +7,7 @@ const App = () => {
         Header in App
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
