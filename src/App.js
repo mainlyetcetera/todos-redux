@@ -16,6 +16,18 @@ const App = () => {
             Go
           </button>
         </form>
+        <ul className='allTodos'>
+          <li
+            className='singleTodo'
+          >
+            <span className='todoText'>Some text here</span>
+            <button
+              className='delete'
+            >
+              Delete
+            </button>
+          </li>
+        </ul>
       </header>
     </div>
   )
