@@ -10,9 +10,14 @@ const App = () => {
   const Todo = useSelector(state => state.Todo)
   const { todos } = Todo
 
+  const clearField = e => {
+    setTodo('')
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     dispatch(AddTodoAction(todo))
+    clearField(e)
   }
 
   const removeHandler = t => {
@@ -28,6 +33,7 @@ const App = () => {
         >
           <input
             placeholder='Enter a Todo'
+            value={todo}
             onChange={e => setTodo(e.target.value)}
           />
           <button
