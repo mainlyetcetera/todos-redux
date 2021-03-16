@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { AddTodoAction } from './actions/TodoActions' 
+import { AddTodoAction, RemoveTodoAction } from './actions/TodoActions' 
 import './App.css'
 
 const App = () => {
@@ -13,6 +13,10 @@ const App = () => {
   const handleSubmit = e => {
     e.preventDefault()
     dispatch(AddTodoAction(todo))
+  }
+
+  const removeHandler = t => {
+    dispatch(RemoveTodoAction(t))
   }
 
   return (
@@ -35,14 +39,15 @@ const App = () => {
         </form>
         <ul className='allTodos'>
           {
-            todos && todos.map(todo => (
+            todos && todos.map(t => (
               <li
                 className='singleTodo'
-                key={todo.id}
+                key={t.id}
               >
-                <span className='todoText'>{todo.todo}</span>
+                <span className='todoText'>{t.todo}</span>
                 <button
                   className='delete'
+                  onClick={() => removeHandler(t)}
                 >
                   Delete
                 </button>
