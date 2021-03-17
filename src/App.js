@@ -10,14 +10,14 @@ const App = () => {
   const Todo = useSelector(state => state.Todo)
   const { todos } = Todo
 
-  const clearField = e => {
+  const clearField = () => {
     setTodo('')
   }
 
   const handleSubmit = e => {
     e.preventDefault()
     dispatch(AddTodoAction(todo))
-    clearField(e)
+    clearField()
   }
 
   const removeHandler = t => {
