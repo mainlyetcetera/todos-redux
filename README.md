@@ -14,6 +14,8 @@ In this case, this app holds To-dos as the state.
 1. Add a todo by adding text to the input then clicking on `Go`
 2. Once you have a todo, you may delete the todo
 
+<p align='center'>
 <img src='https://media.giphy.com/media/rBFgvkLUTTGcLKmogR/giphy.gif'> 
+</p>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
